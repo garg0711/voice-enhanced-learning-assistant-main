@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voice-Enhanced Learning Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+  <div class="glass-container" role="main" aria-label="Voice Learn Assistant">
+    <!-- <div id="onboarding">
+      <strong>Tip:</strong> Click <b>Start</b> and speak your question, or type below. <br>
+      Choose your language and control playback speed.
+    </div> -->
+    <h1>Voice Learn</h1>
+    <div class="mic-visual" id="mic-visual" aria-label="Microphone status">
+      <svg id="mic-icon" viewBox="0 0 60 60">
+        <circle id="mic-border" cx="30" cy="30" r="28" stroke="#2b3a67" stroke-width="4" fill="none"/>
+        <circle cx="30" cy="30" r="18" fill="#405eaa"/>
+        <rect x="25" y="18" width="10" height="24" rx="5" fill="#fff"/>
+        <rect x="27" y="40" width="6" height="10" rx="3" fill="#fff"/>
+      </svg>
+    </div>
+    <div class="status-text" id="status-text" aria-live="polite"></div>
+    <div class="buttons">
+      <button id="start-btn" aria-label="Start Listening">🎤 Start</button>
+      <button id="stop-btn" aria-label="Stop Listening">⏹ Stop</button>
+      <button id="pause-btn" aria-label="Pause Speech">⏸ Pause</button>
+      <button id="resume-btn" aria-label="Resume Speech">▶ Resume</button>
+    </div>
+    <div class="controls">
+      <select id="language-select" aria-label="Language">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+        <option value="hi">Hindi</option>
+        <option value="ar">Arabic</option>
+        <!-- Add more as needed -->
+      </select>
+      <label for="speed-slider" style="margin-left:8px;">Speed:</label>
+      <input type="range" id="speed-slider" min="0.5" max="2.0" step="0.1" value="1.0" aria-label="Playback Speed">
+      <span id="speed-display">1.0x</span>
+    </div>
+    <form id="text-form" style="margin-top:10px;">
+      <input type="text" id="text-input" placeholder="Type your question..." style="padding:8px; border-radius:5px; border:none; width:70%;" aria-label="Text input">
+      <button type="submit" aria-label="Send">Send</button>
+    </form>
+    <div id="output"></div>
+    <audio id="audio-player" controls></audio>
+    <div id="history"></div>
+  </div>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
