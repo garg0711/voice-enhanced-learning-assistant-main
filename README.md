@@ -45,7 +45,7 @@ requests, re, emoji
 
 **->Clone the Repository:**
 
-git clone https://github.com/Marcus8134/voice-enhanced-learning-assistant.git
+git clone https://github.com/garg0711/voice-enhanced-learning-assistant-main.git
 
 cd voice-enhanced-learning-assistant
 
